@@ -45,7 +45,21 @@ namespace TestWeb.Controllers
             return Content(year+"/"+month);
         }
 
+        public ActionResult ListMovies()
+        {
+            var list = new List<Movie>
+            {
+            new Movie { Name = "Shrek!", Id = 1 },
+            new Movie { Name = "Wall-E", Id = 2 }
+            };
 
+            var listMovie = new ListMovies
+            {
+                listOfMovies = list
+            };
+
+            return View(listMovie);
+        }
         public ActionResult Index(int? pageIndex, string sortBy)
         {
             if (!pageIndex.HasValue) pageIndex = 1;

@@ -1,0 +1,27 @@
+﻿@model TestWeb.ViewModels.ListCustomers
+@{
+    ViewBag.Title = "ListCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+<table>
+    <tr>
+        <th>
+            Customer Name
+        </th>
+    </tr>
+    @foreach (var cust in Model.listOfCustomers)
+    {
+
+        <tr>
+            <td>
+                @cust.Name
+            </td>
+        </tr>
+
+
+
+    }
+</table>
